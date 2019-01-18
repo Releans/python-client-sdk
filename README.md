@@ -28,7 +28,7 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 ![Open project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=pyCharm)
 
-Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
+Click on ```Open``` in PyCharm to browse to your Releans SDK directory and then click ```OK```.
 
 ![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Releans-Python)     
 
@@ -54,7 +54,7 @@ Name it "testsdk"
 
 ![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=nameFile)
 
-In your python file you will be required to import the generated python library using the following code lines
+In your python file you will be required to import the Releans python library using the following code lines
 
 ```Python
 from releans.releans import Releans
@@ -73,7 +73,7 @@ To run the file within your test project, right click on your Python file inside
 
 ## How to Test
 
-You can test the generated SDK and the server with automatically generated test
+You can test the Releans SDK and the server with automatically generated test
 cases. unittest is used as the testing framework and nose is used as the test
 runner. You can run the tests as follows:
 
