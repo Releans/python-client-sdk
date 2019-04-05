@@ -2,10 +2,6 @@
 
 The Releans SDK enables developers to use Releans Services in their code. You can get started in minutes.
 
-## Create Releans Account
-
-First, [sign up for a Releans account](https://platform.releans.com/site/signup) if you don't already have one, and make a note of your API key on the dashboard API page.
-
 ## How to Build
 
 
@@ -19,12 +15,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Releans-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Releans%20API-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Releans SDK package in a new project.
+The following section explains how to use the Releansapi SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -32,19 +28,19 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 ![Open project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=pyCharm)
 
-Click on ```Open``` in PyCharm to browse to your Releans SDK directory and then click ```OK```.
+Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Releans-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Releans%20API-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Releans-Python&projectName=releans)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Releans%20API-Python&projectName=releansapi)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Releans-Python&projectName=releans)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Releans%20API-Python&projectName=releansapi)
 
 Name the directory as "test"
 
@@ -52,19 +48,19 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Releans-Python&projectName=releans)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Releans%20API-Python&projectName=releansapi)
 
 Name it "testsdk"
 
 ![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=nameFile)
 
-In your python file you will be required to import the Releans python library using the following code lines
+In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from releans.releans import Releans
+from releansapi.releansapi_client import ReleansapiClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Releans-Python&libraryName=releans.releans&projectName=releans&className=Releans)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Releans%20API-Python&libraryName=releansapi.releansapi_client&projectName=releansapi&className=ReleansapiClient)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -72,12 +68,12 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Releans-Python&libraryName=releans.releans&projectName=releans&className=Releans)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Releans%20API-Python&libraryName=releansapi.releansapi_client&projectName=releansapi&className=ReleansapiClient)
 
 
 ## How to Test
 
-You can test the Releans SDK and the server with automatically generated test
+You can test the generated SDK and the server with automatically generated test
 cases. unittest is used as the testing framework and nose is used as the test
 runner. You can run the tests as follows:
 
@@ -102,7 +98,7 @@ API client can be initialized as following.
 # Configuration parameters and credentials
 o_auth_access_token = 'o_auth_access_token' # OAuth 2.0 Access Token
 
-client = Releans(o_auth_access_token)
+client = ReleansapiClient(o_auth_access_token)
 ```
 
 
@@ -130,41 +126,24 @@ An instance of the ``` MessageController ``` class can be accessed from the API 
 > List all messages sent by the account.
 
 ```python
-def get_all_messages(self)
-```
-
-#### Example Usage
-
-```python
-
-result = message_controller.get_all_messages()
-
-```
-
-
-### <a name="get_price_of_message"></a>![Method: ](https://apidocs.io/img/method.png ".MessageController.get_price_of_message") get_price_of_message
-
-> Return cost of sending a message to the number.
-
-```python
-def get_price_of_message(self,
-                             mobile_number)
+def get_all_messages(self,
+                         accept)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| mobileNumber |  ``` Required ```  | Mobile number you want to know the price of sending a message. |
+| accept |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-mobile_number = 'mobileNumber'
+accept = '*/*'
 
-result = message_controller.get_price_of_message(mobile_number)
+result = message_controller.get_all_messages(accept)
 
 ```
 
@@ -175,14 +154,16 @@ result = message_controller.get_price_of_message(mobile_number)
 
 ```python
 def get_view_message(self,
-                         id)
+                         id,
+                         accept)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| id |  ``` Required ```  ``` DefaultValue ```  | Id of the message you need to return its details. |
+| id |  ``` Required ```  | TODO: Add a parameter description |
+| accept |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -190,8 +171,9 @@ def get_view_message(self,
 
 ```python
 id = 'id'
+accept = '*/*'
 
-result = message_controller.get_view_message(id)
+result = message_controller.get_view_message(id, accept)
 
 ```
 
@@ -202,6 +184,7 @@ result = message_controller.get_view_message(id)
 
 ```python
 def create_send_sms_message(self,
+                                accept,
                                 sender_id,
                                 mobile_number,
                                 message)
@@ -211,20 +194,22 @@ def create_send_sms_message(self,
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| senderId |  ``` Required ```  ``` DefaultValue ```  | Sender id to send the message from. |
-| mobileNumber |  ``` Required ```  ``` DefaultValue ```  | The mobile number supposed to receive the message. |
-| message |  ``` Required ```  ``` DefaultValue ```  | Message text. |
+| accept |  ``` Required ```  | TODO: Add a parameter description |
+| senderId |  ``` Required ```  | Sender id to send the message from. |
+| mobileNumber |  ``` Required ```  | The mobile number supposed to receive the message. |
+| message |  ``` Required ```  | Message text. |
 
 
 
 #### Example Usage
 
 ```python
-sender_id = 'sender-id'
-mobile_number = 'mobile-number'
+accept = 'Accept'
+sender_id = 'senderId'
+mobile_number = 'mobileNumber'
 message = 'message'
 
-result = message_controller.create_send_sms_message(sender_id, mobile_number, message)
+result = message_controller.create_send_sms_message(accept, sender_id, mobile_number, message)
 
 ```
 
@@ -247,14 +232,16 @@ An instance of the ``` SenderController ``` class can be accessed from the API C
 
 ```python
 def get_sender_name_details(self,
-                                id)
+                                id,
+                                accept)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| id |  ``` Required ```  ``` DefaultValue ```  | The sender id you want its details |
+| id |  ``` Required ```  | TODO: Add a parameter description |
+| accept |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -262,8 +249,9 @@ def get_sender_name_details(self,
 
 ```python
 id = 'sender-id'
+accept = '*/*'
 
-result = sender_controller.get_sender_name_details(id)
+result = sender_controller.get_sender_name_details(id, accept)
 
 ```
 
@@ -274,23 +262,29 @@ result = sender_controller.get_sender_name_details(id)
 
 ```python
 def create_sender_name(self,
-                           sender_name)
+                           accept,
+                           content_type,
+                           body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| senderName |  ``` Required ```  ``` DefaultValue ```  | Name you want to register as Sender Name |
+| accept |  ``` Required ```  | TODO: Add a parameter description |
+| contentType |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-sender_name = 'Your sender name'
+accept = 'text/plain'
+content_type = 'text/plain'
+body = 'Your sender name'
 
-result = sender_controller.create_sender_name(sender_name)
+result = sender_controller.create_sender_name(accept, content_type, body)
 
 ```
 
@@ -300,14 +294,24 @@ result = sender_controller.create_sender_name(sender_name)
 > List all senders names associated with the account
 
 ```python
-def get_all_senders(self)
+def get_all_senders(self,
+                        accept)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accept |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```python
+accept = '*/*'
 
-result = sender_controller.get_all_senders()
+result = sender_controller.get_all_senders(accept)
 
 ```
 
@@ -329,14 +333,24 @@ An instance of the ``` BalanceController ``` class can be accessed from the API 
 > Get your available balance
 
 ```python
-def get_balance(self)
+def get_balance(self,
+                    accept)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| accept |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```python
+accept = 'text/plain'
 
-result = balance_controller.get_balance()
+result = balance_controller.get_balance(accept)
 
 ```
 
